@@ -1,6 +1,5 @@
 // Require the gulp components
-const { src, dest, watch, series, parallel } = require('gulp');
-const sourceMaps = require('gulp-sourcemaps');
+const { src, dest, watch, parallel } = require('gulp');
 const babel = require('gulp-babel');
 const uglify = require('gulp-terser');
 const rename = require('gulp-rename');
@@ -12,7 +11,6 @@ const pJson = require('./package.json');
 
 function buildJs() {
     return src('src/*.js')
-        .pipe(sourceMaps.init())
         .pipe(babel({ presets: [[
             '@babel/preset-env',
             {
@@ -21,7 +19,6 @@ function buildJs() {
         ]] }))
         .pipe(uglify())
         .pipe(rename({ extname: '.min.js', dirname: '' }))
-        .pipe(sourceMaps.write('.'))
         .pipe(replace(new RegExp('@version@', 'g'), pJson.version))
         .pipe(dest('dist'))
         .pipe(browserSync.stream());
