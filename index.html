@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <style>
+        html, body{
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    Swipe
+
+    <div id="swipeMe" style="width: 50%; height: 400px; background-color: red;"></div>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+    <script src="dist/swipe.min.js"></script>
+    <script>
+
+        function swipeCallback(event) {
+            console.log(event.detail);
+        }
+
+        var element = document.body;
+
+        var mySwipe = new Swipe(element).on('swipe', swipeCallback);
+        
+        element.addEventListener('swipe', swipeCallback);
+        
+        // $(element).Swipe().on('swipe', swipeCallback);
+    </script>
+</body>
+</html>
