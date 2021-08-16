@@ -1,6 +1,6 @@
 # Swipe Detect
 
-Avery simple and lightweight (**1.9kb**) Javascript script to detect `swipe`, `swipeLeft`, `swipeRight`, `swipeDown` and `swipeUp` on any element or set of elements using pure Javascript or as a jQuery plugin.
+A very simple and lightweight (**1.9kb**) JavaScript tool to detect `swipe`, `swipeLeft`, `swipeRight`, `swipeDown` and `swipeUp` on any element or set of elements using pure Javascript or as a jQuery plugin.
 
 ## Usage
 
