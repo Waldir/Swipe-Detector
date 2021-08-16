@@ -36,7 +36,7 @@ document.body.addEventListener('swipe', function (e) {
 });
 ```
 
-Note that the 'on' method works like jquery where if you provide a more than one element it will add the event listener to all of them. It does not, however, accept multiple space separated events such as `swipeUp swipeDown` since you want to listen for more than one swipe event you can simply listen for `swipe` and check the direction of the swipe using `e.detail`.
+Note that the 'on' method works like jquery where if you provide more than one element it will add the event listener to all of them. It does not, however, accept multiple space separated events such as `swipeUp swipeDown` since if you want to listen for more than one swipe event you can simply listen for `swipe` and check the direction of the swipe using `e.detail`.
 ### Initiate as a jQuery plugin
 
 ```js
@@ -51,8 +51,8 @@ $(element).Swipe({}).on('swipeDown', function (e) {
 You can currently pass the following options.
 Option      | Description                                                                 | Type | Default
 ------------|-----------------------------------------------------------------------------|------|---------
-sensitivity | The ammount of pixels a finger has to travel before it's considered a swipe | int  | 20
-timeOut     | How much time in miliseconds before it is not considered a swipe any longer | int  | 500
+sensitivity | The amount of pixels a finger has to travel before it's considered a swipe | int  | 20
+timeOut     | How much time in milliseconds before it is not considered a swipe any longer | int  | 500
 
 ```js
 new Swipe(element, {
