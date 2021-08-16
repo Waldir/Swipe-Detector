@@ -1,8 +1,9 @@
 /*!
 * Swipe detector - v@version@
-*
-* Copyright (C) 2021 https://github.com/Waldir
-* Author: Waldir Bolanos
+* Detect up, down, left, right and swipe using vanilla JS or as jQuery plugin
+* https://github.com/Waldir/Swipe-Detector
+* @author Waldir Bolanos <https://waldirb.com>
+* @license MIT
 */
 (function f(window) {
     let global = {};
