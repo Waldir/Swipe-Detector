@@ -22,9 +22,9 @@
     ];
 
     /**
-     * event point
+     * Get the x, y, time and target points from the touch event
      * @param {Object} event Event object.
-     * @returns Object
+     * @returns {Object}
      */
     function eventPoint(event) {
         const ev = {
@@ -42,17 +42,25 @@
     }
 
     /**
-    * Gets an iterable element for the passed elements
+    * Gets an array of elements for the passed selector, HTMLElement, HTMLCollection or NodeList
+    * @param {String|HTMLElement|HTMLCollection|NodeList} selector
+    * @returns {Array}
     */
     function getList(selector) {
-        const toString = Object.prototype.toString.call(selector);
-        if (toString === '[object HTMLCollection]' || toString === '[object NodeList]')
+        const objName = Object.prototype.toString.call(selector);
+        if (objName === '[object HTMLCollection]' || objName === '[object NodeList]')
             return [].slice.call(selector);
-        if (toString === '[object Array]')
+        if (objName === '[object Array]')
             return selector;
         return [selector];
     }
 
+    /**
+     * Fire a Custom event on an element.
+     * @param {HTMLElement} el Element target
+     * @param {String} name Event name
+     * @param {Object} detail Extra details about the event
+     */
     function fireEvent(el, name, detail) {
         let ev;
         try {
@@ -66,6 +74,12 @@
         el.dispatchEvent(ev);
     }
 
+    /**
+     * Main function.
+     * @param {String|HTMLElement|HTMLCollection|NodeList} selector
+     * @param {Object} options
+     * @returns {Object}
+     */
     function Swipe(selector, options) {
         this.els = [];
         options = options || {};
@@ -113,7 +127,7 @@
                                 ? axis[global.swipeAxis][0]
                                 : axis[global.swipeAxis][1];
 
-                            // Create variables with name and timestamp.
+                            // Create variables with name and detail.
                             const eventName = `swipe${global.swipeDirection}`;
                             const detail = {
                                 direction: global.swipeDirection.toLowerCase(),
