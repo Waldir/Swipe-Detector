@@ -1,6 +1,6 @@
 # Swipe Detect
 
-Detect `swipe`, `swipeLeft`, `swipeRight`, `swipeDown` and `swipeUp` on any element or set of elements using pure Javascript or as a jQuery plugin.
+Avery simple and lightweight (**1.9kb**) Javascript script to detect `swipe`, `swipeLeft`, `swipeRight`, `swipeDown` and `swipeUp` on any element or set of elements using pure Javascript or as a jQuery plugin.
 
 ## Usage
 
@@ -49,9 +49,9 @@ $(element).Swipe({}).on('swipeDown', function (e) {
 ## Options
 
 You can currently pass the following options.
-Option      | Description                                                                 | Type | Default
-------------|-----------------------------------------------------------------------------|------|---------
-sensitivity | The amount of pixels a finger has to travel before it's considered a swipe | int  | 20
+Option      | Description                                                                  | Type | Default
+------------|------------------------------------------------------------------------------|------|---------
+sensitivity | The amount of pixels a finger has to travel before it's considered a swipe   | int  | 20
 timeOut     | How much time in milliseconds before it is not considered a swipe any longer | int  | 500
 
 ```js
