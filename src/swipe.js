@@ -81,7 +81,6 @@
      * @returns {Object}
      */
     function Swipe(selector, options) {
-        this.els = [];
         options = options || {};
         options.sensitivity = options.sensitivity || 20;
         options.timeOut = options.timeOut || 500;
@@ -93,6 +92,8 @@
         // If this is a string, use querySelectorAll.
         if (typeof selector === 'string')
             selector = document.querySelectorAll(selector);
+
+        this.els = [];
 
         // Iterate through all found elements
         getList(selector).forEach((el) => {

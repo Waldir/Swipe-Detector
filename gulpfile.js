@@ -15,6 +15,7 @@ function buildJs() {
             '@babel/preset-env',
             {
                 exclude: ['@babel/plugin-transform-typeof-symbol'],
+                modules: false,
             },
         ]] }))
         .pipe(uglify())
