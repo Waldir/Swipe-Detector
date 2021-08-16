@@ -165,7 +165,7 @@
 
     // Add jQuery plugin.
     if (window.jQuery) {
-        jQuery.fn.Swipe = function Swipe(options) {
+        jQuery.fn.Swipe = function fnSwipe(options) {
             Swipe(this.get(), options);
             return this;
         };

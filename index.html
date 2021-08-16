@@ -18,7 +18,7 @@
     <div id="swipeMe" style="width: 50%; height: 400px; background-color: red;"></div>
     
     <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
-    <script src="dist/swipe.min.js"></script>
+    <script src="src/swipe.js"></script>
     <script>
 
         function swipeCallback(event) {
@@ -27,11 +27,10 @@
 
         var element = document.body;
 
-        var mySwipe = new Swipe(element).on('swipe', swipeCallback);
+        // var mySwipe = new Swipe(element).on('swipe', swipeCallback);
         
-        element.addEventListener('swipe', swipeCallback);
-        
-        // $(element).Swipe().on('swipe', swipeCallback);
+        // element.addEventListener('swipe', swipeCallback);
+        $(element).Swipe().on('swipe', swipeCallback);
     </script>
 </body>
 </html>
